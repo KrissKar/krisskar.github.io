@@ -4,6 +4,24 @@
     box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Geist Mono Adjusted';
+  src: url('fonts/geist-mono.ttf') format('truetype');
+  font-weight: 100 900;
+  size-adjust: 91.63%;
+  ascent-override: 100.40%;
+  descent-override: 27.28%;
+}
+
+@font-face {
+  font-family: 'VT323 Adjusted';
+  src: url('fonts/vt323.ttf') format('truetype');
+  font-weight: 100 900;
+  size-adjust: 137.45%;
+  ascent-override: 66.93%;
+  descent-override: 18.19%;
+}
+
 :root {
     /*Background*/
     --bg-base:     #0A0A10;
@@ -34,8 +52,8 @@
 
 
     /*fonts*/
-    --font-sans:  'Geist Sans',    monospace;
-    --font-pixel: 'Pixelify Sans', monospace;
+    --font-sans:  'Geist Mono Adjusted',    monospace;
+    --font-pixel: 'VT323 Adjusted', monospace;
     /*Text scale - fluid from 320px to 1440px viewport, current value = max */
     --text-xs:   clamp(0.688rem, 0.67rem  + 0.089vi, 0.75rem);  /* up to 12px - fine print     */
     --text-sm:   clamp(0.813rem, 0.795rem + 0.089vi, 0.875rem); /* up to 14px - secondary      */
@@ -53,6 +71,10 @@ body {
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     background: var(--bg-base);
+}
+
+body.pixel {
+    font-family: var(--font-pixel);
 }
 
 h1, h2 {
@@ -477,7 +499,14 @@ footer {
     color: var(--text-dimmed);
 }
 
-
+#mage {
+    background: none;
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
 
 
 
