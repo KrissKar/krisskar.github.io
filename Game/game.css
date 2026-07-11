@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'Geist Mono Adjusted';
-  src: url('../fonts/geist-mono.ttf') format('truetype');
+  src: url('../fonts/GeistMono.ttf') format('truetype');
   font-weight: 100 900;
   size-adjust: 91.63%;
   ascent-override: 100.40%;
@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: 'VT323 Adjusted';
-  src: url('../fonts/vt323.ttf') format('truetype');
+  src: url('../fonts/VT323.ttf') format('truetype');
   font-weight: 100 900;
   size-adjust: 137.45%;
   ascent-override: 66.93%;
