@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Geist Mono Adjusted';
+  src: url('../fonts/geist-mono.ttf') format('truetype');
+  font-weight: 100 900;
+  size-adjust: 91.63%;
+  ascent-override: 100.40%;
+  descent-override: 27.28%;
+}
+
+@font-face {
+  font-family: 'VT323 Adjusted';
+  src: url('../fonts/vt323.ttf') format('truetype');
+  font-weight: 100 900;
+  size-adjust: 137.45%;
+  ascent-override: 66.93%;
+  descent-override: 18.19%;
+}
+
+:root {
+    /*Background*/
+    --bg-base:     #0A0A10;
+    --bg-secondary:#1B1638;
+    --bg-header:   #ececf611;
+    
+    /*Glow*/
+    --glow-violet:  #2D2358;
+    --glow-blue:    #142A4D;
+    --glow-indigo:  #221d4e;
+    --glow-blurple: #1E1A44;
+
+    /*Text color*/
+    --text-primary:  #ECECF6;
+    --text-secondary:#A3A3C2;
+    --text-accent:   #9387F2;
+    --text-dimmed:   #5F4FDD;
+    --text-muted:    #6C6C8A;
+
+    --color-border:    #A3A3C23d;
+    --color-glow-dim:  #7C6FF0;
+    --color-glow:      #9387F2;
+    --card-background: #1a1a2850;
+    --card-border:     #23233A;
+
+    /* Used for header elements in order to be fluid */
+    --pfp: clamp(5rem, 2.857rem + 10.714vi, 12.5rem);
+
+
+    /*fonts*/
+    --font-sans:  'Geist Mono Adjusted',    monospace;
+    --font-pixel: 'VT323 Adjusted', monospace;
+    /*Text scale - fluid from 320px to 1440px viewport, current value = max */
+    --text-xs:   clamp(0.688rem, 0.67rem  + 0.089vi, 0.75rem);  /* up to 12px - fine print     */
+    --text-sm:   clamp(0.813rem, 0.795rem + 0.089vi, 0.875rem); /* up to 14px - secondary      */
+    --text-base: clamp(0.938rem, 0.92rem  + 0.089vi, 1rem);     /* up to 16px - body           */
+    --text-lg:   clamp(1.125rem, 1.089rem + 0.179vi, 1.25rem);  /* up to 20px - subheadings    */
+    --text-xl:   clamp(1.25rem,  1.107rem + 0.714vi, 1.75rem);  /* up to 28px - section titles */
+    --text-2xl:  clamp(1.75rem,  1.536rem + 1.071vi, 2.5rem);   /* up to 40px - hero heading   */
+
+}
+
+body {
+    animation: bg-col 0.6s ease-out both 0.5s;
+}
+
+@keyframes bg-col {
+    from {
+        background-color: white;
+    } 
+    to {
+        background-color: var(--bg-base);
+    }
+}
+
+.coming-soon {
+    font-family: var(--font-pixel);
+    font-size: 6rem;
+    color: var(--text-primary);
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    align-content: center;
+    animation: appear 1.5s both 3s;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.underscore{
+    opacity: 0;
+    animation: flash 1.5s infinite both 3s;
+}
+
+@keyframes flash {
+    1% { opacity: 1;}
+    30%{opacity: 1;}
+    31% {opacity: 0;}
+    79% {opacity: 0;}
+    80% {opacity: 1;}
+    100% {opacity: 1;}
+}
