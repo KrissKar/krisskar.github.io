@@ -65,6 +65,7 @@
 }
 
 body {
+    overflow: hidden;
     animation: bg-col 0.6s ease-out both 0.5s;
 }
 
@@ -77,11 +78,34 @@ body {
     }
 }
 
+.coming-soon::before,
+.coming-soon::after {
+    content: "Coming soon";
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    align-content: center;
+    padding-right: 1ch;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+.coming-soon::before {
+    color: #ff3b3b;
+    transform: translateX(-2px);
+}
+
+.coming-soon::after {
+    color: #29d3ff;
+    transform: translateX(2px);
+}
+
 .coming-soon {
+    position: relative;
     font-family: var(--font-pixel);
     font-size: 6rem;
     color: var(--text-primary);
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     text-align: center;
     align-content: center;
@@ -100,13 +124,14 @@ body {
 .underscore{
     opacity: 0;
     animation: flash 1.5s infinite both 3s;
+    text-shadow: -2px 0 #ff3b3b, 2px 0 #29d3ff;
 }
 
 @keyframes flash {
-    1% { opacity: 1;}
-    30%{opacity: 1;}
-    31% {opacity: 0;}
-    79% {opacity: 0;}
-    80% {opacity: 1;}
-    100% {opacity: 1;}
+    1% { opacity: 0;}
+    30%{opacity: 0;}
+    31% {opacity: 1;}
+    79% {opacity: 1;}
+    80% {opacity: 0;}
+    100% {opacity: 0;}
 }
